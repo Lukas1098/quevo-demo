@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
-import { Aldrich, Libre_Baskerville, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Serif_Georgian } from "next/font/google";
 import "./globals.css";
 import { ClientLayoutWrapper } from "./providers/client-provider";
 
-const aldrich = Poppins({
+const geist = Geist({
   variable: "--font-sans",
+  weight: "400"
+})
+
+const geistMono = Geist_Mono({
+  variable: "--font-mono",
+  weight: "400"
+})
+
+const georgia = Noto_Serif_Georgian({
+  variable: "--font-serif",
   weight: "400"
 })
 
@@ -22,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${aldrich.variable} antialiased bg-background`}
+        className={`${geist.variable} ${geistMono.variable} ${georgia.variable} antialiased bg-background`}
       >
         <div className="flex min-h-screen w-full flex-col">
           <div className="">

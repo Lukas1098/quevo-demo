@@ -30,6 +30,7 @@ import {
     SelectValue,
 } from "@/components/ui/select"
 import { Input } from "@/components/ui/input"
+import { Spinner } from "../ui/spinner"
 import { gradeLevels, themes } from "@/data/validation"
 
 const formSchema = z.object({
@@ -212,15 +213,15 @@ export function CentralIdeaForm({ onValidate, onQuickFix, isLoading = false, rew
                         disabled={!form.formState.isValid || isLoading}
                         className="flex-1 min-w-[100px]"
                     >
-                        {isLoading ? "Processing..." : "Quick Fix"}
+                        {isLoading ? <Spinner/> : "Quick Fix"}
                     </Button>
                     <Button
                         type="submit"
                         form="central-idea-form"
                         disabled={!form.formState.isValid || isLoading}
-                        className="flex-1 min-w-[100px] bg-green-400"
+                        className="flex-1 min-w-[100px] bg-foreground"
                     >
-                        {isLoading ? "Validating..." : "Validate Idea"}
+                        {isLoading ? <Spinner/> : "Validate Idea"}
                     </Button>
                 </Field>
             </CardFooter>

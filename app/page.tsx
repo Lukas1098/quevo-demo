@@ -8,6 +8,7 @@ import { useScroll as SmoothScroll } from "@/hooks/useScroll"
 import { motion } from 'motion/react'
 import { VARIANTS_CONTAINER, VARIANTS_SECTION, TRANSITION_SECTION } from "@/data/constants";
 import { EmptyState } from "@/lib/empty-state";
+import { Spotlight } from "@/components/motion-primitives/SpotLight";
 
 export default function Home() {
   const [result, setResult] = useState<ValidationResult | null>(null);
@@ -16,20 +17,21 @@ export default function Home() {
 
   const handleValidate = async (data: CentralIdeaFormData) => {
     setIsLoading(true);
-    
+
     try {
       const response = await fetch("/api/validation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
+
       if (!response.ok) {
         throw new Error("Validation failed");
       }
-      
+
       const validationResult = await response.json();
       setResult(validationResult);
+      console.log("Validation result:", { validationResult })
     } catch (error) {
       console.error("Validation error:", error);
     } finally {
@@ -100,6 +102,10 @@ export default function Home() {
           transition={TRANSITION_SECTION}
         >
           <SmoothScroll />
+          <Spotlight
+            className="-top-40 left-0 md:-top-20 md:left-60"
+            fill="white"
+          />
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* form */}
