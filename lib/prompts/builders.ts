@@ -131,18 +131,18 @@ Determine overall_rating based on overall_score:
 Respond with valid JSON only (no text outside JSON):
 
 {
-  "theme_connection_score": 5,
-  "conceptual_depth_score": 3,
-  "transfer_relevance_score": 4,
-  "inquiry_potential_score": 4,
-  "language_structure_score": 3,
+  "theme_connection_score": <number 0-5>,
+  "conceptual_depth_score": <number 0-5>,
+  "transfer_relevance_score": <number 0-5>,
+  "inquiry_potential_score": <number 0-5>,
+  "language_structure_score": <number 0-5>,
   "theme_connection_rationale": "Detailed explanation of score (minimum 50 characters)",
   "conceptual_depth_rationale": "Detailed explanation of score (minimum 50 characters)",
   "transfer_relevance_rationale": "Detailed explanation of score (minimum 50 characters)",
   "inquiry_potential_rationale": "Detailed explanation of score (minimum 50 characters)",
   "language_structure_rationale": "Detailed explanation of score (minimum 50 characters)",
-  "overall_score": 3.8,
-  "overall_rating": "Strong",
+  "overall_score": <average of all five scores>,
+  "overall_rating": <"Exemplary" | "Strong" | "Developing" | "Emerging" | "Needs Work" based on overall_score>,
   "priority_improvements": [
     "Specific, actionable improvement 1",
     "Specific, actionable improvement 2",
