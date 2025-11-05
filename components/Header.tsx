@@ -21,7 +21,7 @@ export function Header() {
         <div className='flex space-x-2 rounded-xl border border-zinc-950/10 dark:border-zinc-50/10 bg-white dark:bg-card p-2'>
           <AnimatedBackground
             defaultValue={activeTab}
-            className='rounded-lg bg-zinc-100 dark:bg-zinc-800'
+            className='rounded-lg bg-zinc-100 dark:bg-[#ff99cc]'
             transition={{ type: 'spring', bounce: 0.2, duration: 0.3 }}
           >
             {TABS.map((tab) => (

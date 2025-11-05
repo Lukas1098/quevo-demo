@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Aldrich } from "next/font/google";
+import { Aldrich, Libre_Baskerville, Poppins } from "next/font/google";
 import "./globals.css";
 import { ClientLayoutWrapper } from "./providers/client-provider";
 
-const aldrich = Aldrich({
+const aldrich = Poppins({
   variable: "--font-sans",
   weight: "400"
 })
+
 
 export const metadata: Metadata = {
   title: "Quevo Demo",

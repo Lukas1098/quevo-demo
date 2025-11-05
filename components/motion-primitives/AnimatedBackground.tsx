@@ -40,7 +40,6 @@ export function AnimatedBackground({
     }
   };
 
-  // Actualizar activeId cuando cambie defaultValue
   useEffect(() => {
     if (defaultValue !== undefined) {
       setActiveId(defaultValue);
@@ -61,8 +60,7 @@ export function AnimatedBackground({
           onMouseLeave: () => handleSetActiveId(null),
         }
       : {
-          // Para Links, no necesitamos onClick ya que el Link maneja la navegación
-          // pero podemos agregar un handler si queremos actualizar el estado antes de navegar
+          
         };
 
     const isActive = activeId === id;
